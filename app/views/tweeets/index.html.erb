@@ -2,7 +2,16 @@
 <section class="section">
   <div class="container">
     <div class="columns">
-      <%= render 'trends' %>
+      <% if user_signed_in? %>
+        <div class = "column is-one-quarter">
+        <%= render 'profile' %>
+        <%= render 'trends' %>
+        </div>
+      <% else %>
+        <div class="column is-one-quarter">
+        <%= render 'trends' %>
+        </div>
+      <% end %>
       <%= render 'feed' %>
       <%= render 'who-to-follow' %>
     </div>
